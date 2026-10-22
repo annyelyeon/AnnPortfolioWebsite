@@ -1,0 +1,10 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.claude/
+
+# Local secrets (never commit a service_role key)
+.env
+.env.*

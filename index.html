@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yelyeon — Portfolio</title>
+  <meta name="description" content="IT student building Web & Apps, with an eye on systems and business ideas behind the technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <!-- 1. Hero -->
+    <section class="section" id="home">
+      <div class="box">
+        <div class="section-head">
+          <h1 class="h1">Portfolio</h1>
+          <span class="badge"><small>Edition</small>2026</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h2 class="h1">Hi, I'm Yelyeon</h2>
+            <p class="eyebrow">IT Student · Web &amp; App Developer</p>
+            <p class="lede">IT student building Web &amp; Apps, with an eye on systems and business ideas behind the technology.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="projects.html" data-icon="arrow">View Projects</a>
+              <a class="btn" href="about.html">About Me</a>
+            </div>
+          </div>
+          <div class="hero-pic">
+            <div class="avatar" data-avatar></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Featured projects -->
+    <section class="section" id="projects">
+      <div class="box" style="border:0;padding:0">
+        <div class="section-head ruled">
+          <h2 class="h2">Featured Projects</h2>
+          <a class="btn" href="projects.html">All Projects</a>
+        </div>
+        <div class="project-grid" data-projects="6" data-featured></div>
+      </div>
+    </section>
+
+    <!-- 3. Latest writing -->
+    <section class="section" id="writing">
+      <div class="box">
+        <div class="section-head">
+          <h2 class="h2">Latest Writing</h2>
+          <div class="tags">
+            <a class="tag" href="blog.html">Dev Blog</a>
+            <a class="tag thoughts" href="thoughts.html">Thoughts</a>
+          </div>
+        </div>
+        <ul class="writing-list" data-posts="5"></ul>
+      </div>
+    </section>
+
+    <!-- 4. Short contact -->
+    <section class="section" id="contact">
+      <div class="box">
+        <div class="section-head">
+          <h2 class="h2">About Me</h2>
+          <span class="badge accent">Open to opportunities</span>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <div class="prose" data-about></div>
+            <div>
+              <a class="btn" href="about.html" data-icon="arrow">More about me</a>
+            </div>
+          </div>
+          <div class="about-side">
+            <div>
+              <h3 class="label">Find me</h3>
+              <div class="socials" style="padding-top:12px" data-socials></div>
+            </div>
+            <div>
+              <h3 class="label">Email</h3>
+              <a class="email-row" style="margin-top:12px" data-email></a>
+            </div>
+            <div>
+              <h3 class="label">Skills</h3>
+              <div class="tags lg" style="padding-top:12px" data-skills></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Editor — Yelyeon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Y. <span class="admin-label">Admin</span></a>
+      <a class="btn" href="index.html" id="back-link">← Dashboard</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <p class="muted" id="edit-msg">Loading…</p>
+
+      <form class="box editor-form" id="editor-form" hidden novalidate>
+        <div class="editor-bar">
+          <span class="save-status" id="save-status" aria-live="polite"></span>
+          <a class="btn" id="view-link" target="_blank" hidden>View live</a>
+          <button type="button" class="btn" id="delete-btn" hidden>Delete</button>
+          <button type="submit" class="btn primary">Save</button>
+        </div>
+
+        <input class="title-input" name="title" placeholder="Title" aria-label="Title" required>
+
+        <div class="field-grid">
+          <label class="field">URL slug
+            <input name="slug" required spellcheck="false">
+          </label>
+          <label class="field">Date
+            <input type="date" name="published_at">
+          </label>
+          <label class="field" data-only="posts">Category
+            <select name="category">
+              <option value="blog">Dev Blog</option>
+              <option value="thoughts">Thoughts</option>
+            </select>
+          </label>
+          <label class="field" data-only="projects">Tech used <small>(comma separated)</small>
+            <input name="tech" placeholder="React, Supabase, Figma">
+          </label>
+          <label class="field" data-only="projects">Live demo URL
+            <input type="url" name="demo_url" placeholder="https://">
+          </label>
+          <label class="field" data-only="projects">Source code URL
+            <input type="url" name="repo_url" placeholder="https://github.com/…">
+          </label>
+          <label class="field" data-only="projects">Card color <small>(when no cover)</small>
+            <input type="color" name="tint" value="#e9e4dc">
+          </label>
+          <label class="field" data-only="projects">Order <small>(lower shows first)</small>
+            <input type="number" name="sort_order" value="0">
+          </label>
+        </div>
+
+        <label class="field">One-line summary
+          <textarea name="summary" rows="2" placeholder="Shown on cards and lists"></textarea>
+        </label>
+
+        <div class="field">
+          Cover image
+          <div class="cover-row">
+            <div class="cover-preview" id="cover-preview"></div>
+            <label class="btn">Upload<input type="file" accept="image/*" id="cover-input" hidden></label>
+            <button type="button" class="btn" id="cover-remove" hidden>Remove</button>
+          </div>
+        </div>
+
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="published"> Published <small>(visible on the site)</small></label>
+          <label class="check" data-only="projects"><input type="checkbox" name="featured" checked> Featured on home page</label>
+        </div>
+
+        <div class="editor" data-view="write">
+          <div class="editor-head">
+            <div class="toolbar" role="toolbar" aria-label="Formatting">
+              <button type="button" data-md="h2" title="Heading">H2</button>
+              <button type="button" data-md="h3" title="Subheading">H3</button>
+              <button type="button" data-md="bold" title="Bold (Ctrl+B)"><b>B</b></button>
+              <button type="button" data-md="italic" title="Italic (Ctrl+I)"><i>I</i></button>
+              <button type="button" data-md="link" title="Link">Link</button>
+              <button type="button" data-md="quote" title="Quote">“ ”</button>
+              <button type="button" data-md="list" title="Bullet list">• List</button>
+              <button type="button" data-md="code" title="Code block">&lt;/&gt;</button>
+              <label class="tool-btn" title="Insert image">Image<input type="file" accept="image/*" id="img-input" multiple hidden></label>
+            </div>
+            <div class="tabs editor-tabs">
+              <button type="button" data-view-btn="write" aria-selected="true">Write</button>
+              <button type="button" data-view-btn="preview">Preview</button>
+            </div>
+          </div>
+          <div class="editor-panes">
+            <textarea name="content" class="md-input" aria-label="Content" placeholder="Write in Markdown… You can paste or drop images here."></textarea>
+            <div class="md md-preview" id="preview"></div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="edit.js"></script>
+</body>
+</html>
