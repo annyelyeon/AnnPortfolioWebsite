@@ -85,6 +85,15 @@ begin
   end loop;
 end $$;
 
+-- ===== Data API access =====
+-- Needed when "Automatically expose new tables" is off (Supabase's recommended setting).
+-- These only open the door; the RLS policies above decide which rows each user may touch.
+grant usage on schema public to anon, authenticated;
+grant select on public.posts, public.projects to anon, authenticated;
+grant insert, update, delete on public.posts, public.projects to authenticated;
+grant select on public.admins to authenticated;
+grant execute on function public.is_admin() to anon, authenticated;
+
 -- ===== Image storage =====
 -- Public bucket: anyone can view images by URL, only admins can upload or delete.
 insert into storage.buckets (id, name, public)

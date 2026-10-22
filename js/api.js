@@ -1,8 +1,11 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./config.js";
 
+// Accept a pasted ".../rest/v1/" URL too — the client needs just the project origin.
+const url = SUPABASE_URL.trim().replace(/\/(rest\/v1\/?)?$/, "").replace(/\/+$/, "");
+
 // null until js/config.js is filled in — the public site then uses js/data.js.
-export const db = SUPABASE_URL && SUPABASE_ANON_KEY ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+export const db = url && SUPABASE_ANON_KEY ? createClient(url, SUPABASE_ANON_KEY.trim()) : null;
 
 const byDateDesc = (a, b) => (b.published_at || "").localeCompare(a.published_at || "");
 
