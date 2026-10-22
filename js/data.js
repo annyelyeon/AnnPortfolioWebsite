@@ -2,18 +2,18 @@
 window.SITE = {
   name: "Yelyeon",
   initials: "Y.",
-  avatar: "", // e.g. "images/profile.jpg" — falls back to initials when empty
-  email: "lien020812@gmail.com",
+  avatar: "images/profile pic.JPEG",
+  email: "yelyeonann@gmail.com",
   socials: {
     github: "https://github.com/annyelyeon",
-    linkedin: "https://www.linkedin.com/",
-    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/in/yelyeon-ann-157954392",
+    instagram: "https://www.instagram.com/yelyeonann",
   },
   aboutShort: [
     "I'm an IT student who likes turning ideas into working web and mobile apps.",
     "Beyond the code, I'm curious about how systems fit together and the business thinking that makes technology worth building.",
   ],
-  skills: ["HTML/CSS", "JavaScript", "React", "Kotlin", "Android", "Java", "Python", "SQL", "Git", "Figma", "Networking"],
+  skills: ["HTML/CSS", "JavaScript", "React", "Kotlin", "Android", "Java", "Python", "SQL", "Git", "Figma"],
 };
 
 // ---------------------------------------------------------------------------
